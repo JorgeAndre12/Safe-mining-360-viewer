@@ -209,25 +209,20 @@ After that, the modules should work without problems.
 ## The Final Product:
 
 Robot Arm Driver, Final Assembly:
-<img src="https://i.ibb.co/M7YVDTf/20190718-234535.jpg" width="400">
+<img src="https://i.ibb.co/M7YVDTf/20190718-234535.jpg" width="600">
 
 Robot Arm Driver, Internal:
-<img src="https://i.ibb.co/pZhMdVD/20190718-234800.jpg" width="400">
+<img src="https://i.ibb.co/pZhMdVD/20190718-234800.jpg" width="600">
 
 Robot Arm Control, Final Assembly:
-<img src="https://i.ibb.co/PYdg5yH/20190718-234910.jpg" width="400">
+<img src="https://i.ibb.co/PYdg5yH/20190718-234910.jpg" width="600">
 
 Robot Arm Control, Internal:
-<img src="https://i.ibb.co/cF953g0/20190718-234308.jpg" width="400">
+<img src="https://i.ibb.co/cF953g0/20190718-234308.jpg" width="600">
 
 ## Important Note:
 
-During the development process, Android Studio was used to perform all OpenCV processing within the Theta, however the examples available in the following resources did not work to make use of the functions to use "Haarcascades" or Neural Networks:
-
-- https://github.com/theta-skunkworks
-- https://github.com/theta360developers
-- https://github.com/codetricity
-- https://github.com/ricohapi
+During the development process, I tried to develop the video streaming and image processing through Android Studio in a plugin, however the algorithms did not work and unfortunately it was decided to make an extra plugin for the contest in addition to the project.
 
 It was decided to make an independent plugin for the ricoh theta plugin store: https://pluginstore.theta360.com/
 
