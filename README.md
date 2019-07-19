@@ -208,70 +208,17 @@ After that, the modules should work without problems.
 
 ## The Final Product:
 
-In order to run the project without problem, we need to connect the laptop to the camera via wifi.
+Robot Arm Driver, Final Assembly:
+<img src="https://i.ibb.co/M7YVDTf/20190718-234535.jpg" width="400">
 
-The process to activate the AP point of the camera is the following:
+Robot Arm Driver, Internal:
+<img src="https://i.ibb.co/pZhMdVD/20190718-234800.jpg" width="400">
 
-1. When the camera is connected to a smartphone via a Wi-Fi network, you can use your smartphone to shoot remote photos and view photos.
+Robot Arm Control, Final Assembly:
+<img src="https://i.ibb.co/PYdg5yH/20190718-234910.jpg" width="400">
 
-2. Press the power button on the camera to turn the power on
-
-<img src="https://support.theta360.com/uk/manual/img/p006.png" width="250">
-
-3. Press the wireless button to turn the wireless function on
-
-<img src="https://support.theta360.com/uk/manual/img/p009.png" width="250">
-
--  The wireless lamp lights in red.
-      
-4. Display the Wi-Fi settings of your smartphone
-
-Select the SSID of the camera from the network list and enter the password
-
-<img src="https://support.theta360.com/uk/manual/img/p007.png" width="250">
-
-- The serial number printed on the base of the camera is the same as the SSID and password. 
-- The SSID is "THETA" plus the numbers in the (B) section (in this case "THETA001017"). The password is the numbers in the (A) section (in this case "00001017").
-
-Connect your Laptop to the camera.
-
-In order for the product to work completely we need to run the following python programs in parallel in two different kernel, this is easily possible from Anaconda.
-
-<img src="https://i.ibb.co/0qVZ951/Consoles.png" width="1000">
-
-### Explanation of program "Theta, take, preocess and deploy data.py":
-
-This program has the function of connecting to the Theta API.
-
-Take a 360 photo.
-
-Process it with DL models to take Gender and Age data:
-
-The process to obtain age and gender is done through the following process.
-- Get the faces inside the image using Haarcascades.
-- Process it using DL models.
-
-Once we have the whole process we will remove the photo from the camera so as not to fill the memory in the long run.
-
-Once we have the counting of people of male and female gender, we keep the variable "check" in a pickle file.
-
-The update of the "check" variable occurs every 20 seconds, the minimum that the update should last is 30 seconds, because each ad lasts approximately 30 seconds, so always the ad that is reproduced will be the most efficient for the public at all times.
-
-### Explanation of program "OpenVideo.py":
-
-In this program we can execute the reproduction of the announcements and it works in the following way.
-
-If the "check" variable is equals 0, it means that most of those around the camera are men, the program will produce only ads for men.
-
-If the "check" variable is equals 1, most of the subjects around the camera are women, the program will produce only ads for women.
-
-If the "check" variable is equals 2, then the ads will be reproduced as 1 man and 1 woman.
-
-This is an example how the program works in a laptop with 2 screens in a final product we display the ads in a big screen.
-
-Each ad lasts approximately 30 seconds.
-
-<img src="https://i.ibb.co/cXmT39n/Screenshot-2.png" width="1000">
+Robot Arm Control, Internal:
+<img src="https://i.ibb.co/cF953g0/20190718-234308.jpg" width="400">
 
 ## Important Note:
 
