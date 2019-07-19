@@ -346,7 +346,7 @@ The filters were made with the following code lines:
 ### Video:
 
 Video: Click on the image
-[![Demo](https://i.ibb.co/gdWNmzb/mining360.png)](https://youtu.be/wUKLVBrk_Mk)
+[![Demo](https://i.ibb.co/WWJxD4y/Sin-t-tulo-1.png)](https://youtu.be/GXGoOoDZA8g)
 
 Sorry github does not allow embed videos.
 
