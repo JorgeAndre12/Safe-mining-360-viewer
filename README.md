@@ -79,7 +79,7 @@ This the ARM Relay Diagram:
 
 This is the ARM Control Diagram:
 
-<img src="https://i.ibb.co/CPhShrx/ARMcontrol-bb.png" width="600">
+<img src="https://i.ibb.co/hy6dFF3/ARMcontrol-bb.png" width="600">
 
 ## Theta and Streaming Setup:
 
@@ -174,34 +174,37 @@ Link: https://www.cloudmqtt.com/
 
 ## ESP32 Setup:
 
-<img src="https://pydata.org/cordoba2018/media/sponsor_files/Anaconda_stacked_RGB.png" width="600">
+<img src="https://cdn-shop.adafruit.com/1200x900/3405-06.jpg" width="600">
 
-We have to have the following libraries installed in Anaconda.
+Download the files in the "Arduino Files" folder and we will have to configure two modules of ESP32, one of the arm and one for the control, in both we will have to configure the WiFi and CloudMQTT credentials.
 
-- requests 
-- json
-- shutil
-- OpenCV 
-- argparse
-- pygame
-- pickle 
-- time
+      const char* ssid = "YOUR_SSID";
+      const char* password =  "PASSWORD";
+      const char* mqttServer = "m12.cloudmqtt.com";
+      const int mqttPort = YOURPORT;
+      const char* mqttUser = "YOURUSER";
+      const char* mqttPassword = "YOURPASSWORD";
+      bool sw = false;
 
-To install all the packages you have to run the following commands in Anaconda Prompt.
+For each ESP32, change the name with which it will connect to CloudMQTT.
+ 
+First ESP32:
+ 
+      if (client.connect("ESP32Client1", mqttUser, mqttPassword )) {
 
-      conda install -c anaconda pip
-      pip install pickle
-      pip install pygame
-      conda install -c conda-forge pytest-shutil 
-      conda install -c conda-forge opencv 
+      Serial.println("connected");  
+
+      }
       
-Once we have all the installed packages, we can run the programs in the "Python Scripts" folder without errors, all files have to run from the "Python Scripts" folder due to the files that we need to running correctly, such as deep learning models to identify the gender and age of the subjects that are viewed by the camera.
+Second ESP32:
+ 
+      if (client.connect("ESP32Client2", mqttUser, mqttPassword )) {
 
-It is necessary to run at least once the "Save Pickle.py" program.
+      Serial.println("connected");  
 
-After running for the first time, the other programs run without problems.
-
-
+      }
+      
+After that, the modules should work without problems.
 
 ## The Final Product:
 
