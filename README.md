@@ -73,7 +73,15 @@ https://support.theta360.com/en/download/
 
 This is the connection diagram of the system:
 
-<img src="https://i.ibb.co/Yp23h0N/ads.png" width="800">
+<img src="https://i.ibb.co/QJj60Mq/Diagram.png" width="800">
+
+This the ARM Relay Diagram:
+
+<img src="https://i.ibb.co/H24DQ8N/ARM-bb.png" width="800">
+
+This is the ARM Control Diagram:
+
+<img src="https://i.ibb.co/Dr5j5q3/ARMcontrol-bb.png" width="800">
 
 ## Theta Setup:
 
