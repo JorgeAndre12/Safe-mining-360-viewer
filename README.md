@@ -161,19 +161,16 @@ https://obsproject.com/
 
 ## MQTT Setup:
 
-<img src="https://1.bp.blogspot.com/-PwaAONmMm78/V-ASbVPG39I/AAAAAAAADZY/boHNhTW5V4Y45qzx6gIweePgoO2VkIhfQCLcB/s1600/image04.png" width="600">
+<img src="https://www.cloudmqtt.com/images/iot.png" width="600">
 
-While they are releasing the Developer mode from Ricoh Theta, you can start downloading the latest version of Android Studio at the following link:
+In the case of MQTT you can use any kind of MQTT available in the market, IBM, AWS, Google IoT, CloudMQTT, etc...
 
-https://developer.android.com/studio
+- We will use CloudMQTT for ease of use, create a free account and continue with the tutorial.
+Link: https://www.cloudmqtt.com/
 
-To have the best experience with your Ricoh Theta V camera, we recommend downloading all the software that Ricoh Theta offers (FREE).
+- We need the MQTT Cloud credentials for the MQTT configuration in the next step.
 
-https://support.theta360.com/en/download/
-
-Especially for this project and to perform a control of the camera using API, it will be necessary to have installed, some specialized software to execute programs written in Python, this can be done with Terminal, CMD or an IDE such as Anaconda, in this tutorial we will use Anaconda to run the programs.
-
-https://www.anaconda.com/distribution/
+<img src="https://i.ibb.co/K7zMqs8/cloud-mqtt.png" width="600">
 
 ## ESP32 Setup:
 
