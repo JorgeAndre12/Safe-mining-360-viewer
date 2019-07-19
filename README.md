@@ -79,7 +79,7 @@ This the ARM Relay Diagram:
 
 This is the ARM Control Diagram:
 
-<img src="https://i.ibb.co/hy6dFF3/ARMcontrol-bb.png" width="600">
+<img src="https://i.ibb.co/n1G0b6j/ARMcontrol-bb.png" width="600">
 
 ## Theta and Streaming Setup:
 
