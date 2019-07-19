@@ -22,10 +22,9 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [Introduction](#introduction)
 * [Materials](#materials)
 * [Connection Diagram](#connection-diagram)
-* [Theta Setup](#theta-setup)
+* [Theta and Streaming Setup](#theta-and-streaming-setup)
 * [MQTT Setup](#mqtt-setup)
 * [ESP32 Setup](#esp32-setup)
-* [Streaming Setup](#streaming-setup)
 * [The Final Product](#the-final-product)
 * [Future Rollout](#future-rollout)
 * [Our Plugin](#our-plugin)
@@ -60,7 +59,6 @@ https://www.adafruit.com/product/3405
 - 8 Channel DC 5V Relay Module with Optocoupler    x1.
 https://www.amazon.com/Elegoo-Module-Optocoupler-Arduino-Raspberry/dp/B07F623PHG
 
-
 Software:
 - Android Studio.
 - Anrduino IDE.
@@ -83,15 +81,83 @@ This is the ARM Control Diagram:
 
 <img src="https://i.ibb.co/CPhShrx/ARMcontrol-bb.png" width="600">
 
-## Theta Setup:
+## Theta and Streaming Setup:
 
 <img src="https://media.wired.com/photos/5a679b59d0d73e186fbefd64/master/w_799,c_limit/Ricoh-TopArt.jpg" width="600">
 
-The first part to be able to do this project is to put your Theta V camera in Developer mode, this is a simple but possibly a little slow process, recommend having 2 or 3 days for the engineers in charge of Ricoh Theta to unlock the developer mode of your camera
+Connect the Camera to the PC and put it in Live node.
 
-Read the following documentation by Jessie Cassman to perform this process.
+- Press the mode button until the word Live appears, this mode is only accessible when the camera is connected to a computer.
 
-https://community.theta360.guide/t/ricoh-blog-post-theta-plug-in-development-steps-for-putting-your-theta-into-developer-mode/3141
+### You must configure the camera to perform a live streaming:
+
+- Install the following softwares on your computer:
+https://topics.theta360.com/uk/faq/c_06_v/304_1/
+https://obsproject.com/
+
+### Connect the camera to the PC and configure the OBS to check that we have an image:
+
+- Open OBS and add Source.
+
+<img src="https://i.ibb.co/tMycnSy/ThetaOBS.png" width="600">
+
+- Add Video Capture Device.
+
+<img src="https://i.ibb.co/HBTDgMt/theta1.png" width="600">
+
+- Add the device name (any name).
+
+<img src="https://i.ibb.co/vBbyZsr/theta2.png" width="600">
+
+- Add the device name (any name).
+
+<img src="https://i.ibb.co/vBbyZsr/theta2.png" width="600">
+
+- Select "Ricoh Theta V FullHD or 4k".
+
+<img src="https://i.ibb.co/ZTrcBMM/theta3.png" width="600">
+
+- If everything works fine, we should see the image of the camera in the OBS.
+
+<img src="https://i.ibb.co/b62cLS0/theta4.png" width="600">
+
+### Configure the Streaming on Youtube:
+
+- Go to the YouTube page and go to the "go live" tab.
+
+<img src="https://i.ibb.co/YfxMLJV/theta5.png" width="600">
+
+- Create your new Streaming, i recommend unlisted so that your streaming is not made public.
+
+<img src="https://i.ibb.co/2kvTyVS/ricoh6.png" width="600">
+
+- Once the streaming is created enter in "settings".
+
+<img src="https://i.ibb.co/6YmLmn6/theta6.png" width="600">
+
+- Activate the transmission in 360.
+
+<img src="https://i.ibb.co/qgn4hLK/theta7.png" width="600">
+
+- Enter in OBS Settings.
+
+<img src="https://i.ibb.co/Q8KnFqF/Theta8.png" width="600">
+
+- In the "stream" tab, set the values exactly as the image and paste your key in OBS.
+
+<img src="https://i.ibb.co/6XNzFY8/theta9.png" width="600">
+
+- Start the transmition.
+
+<img src="https://i.ibb.co/DkRr4sJ/theta.png" width="600">
+
+- If everything goes well you should see a preview of what the camera sees.
+
+<img src="https://i.ibb.co/ZcTF2wQ/theta10.png" width="600">
+
+- Since you have the link, you can open it in any VR viewer.
+
+<img src="https://i.ibb.co/2vM8Mw4/theta11.png" width="600">
 
 ## MQTT Setup:
 
@@ -138,7 +204,7 @@ It is necessary to run at least once the "Save Pickle.py" program.
 
 After running for the first time, the other programs run without problems.
 
-## Streaming Setup:
+
 
 ## The Final Product:
 
