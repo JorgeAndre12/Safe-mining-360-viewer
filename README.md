@@ -273,7 +273,7 @@ Select the plug-in that you want to use.
 
 ### Idea:
 
-
+Create a plugin with the ability to make sounds for any occasion, such as comedy, drama situations or whatever is required.
 
 ### How it Works:
 
