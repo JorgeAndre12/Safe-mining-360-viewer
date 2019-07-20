@@ -26,7 +26,6 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [MQTT Setup](#mqtt-setup)
 * [ESP32 Setup](#esp32-setup)
 * [The Final Product](#the-final-product)
-* [Future Rollout](#future-rollout)
 * [Our Plugin](#our-plugin)
 * [References](#references)
 
@@ -226,10 +225,6 @@ Video: Click on the image
 [![Video](https://i.ibb.co/gdWNmzb/mining360.png)](https://youtu.be/JZ9efUy9qbo)
 
 Sorry github does not allow embed videos.
-
-## Future Rollout:
-
-// Inventate algo XP
 
 ## Important Note:
 
