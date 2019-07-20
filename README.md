@@ -220,12 +220,6 @@ Robot Arm Control, Final Assembly:
 Robot Arm Control, Internal:
 <img src="https://i.ibb.co/cF953g0/20190718-234308.jpg" width="800">
 
-## Important Note:
-
-During the development process, I tried to develop the video streaming and image processing through Android Studio in a plugin, however the algorithms did not work and unfortunately it was decided to make an extra plugin for the contest in addition to the project.
-
-It was decided to make an independent plugin for the ricoh theta plugin store: https://pluginstore.theta360.com/
-
 ### Our Epic Video:
 
 Video: Click on the image
@@ -236,6 +230,12 @@ Sorry github does not allow embed videos.
 ## Future Rollout:
 
 // Inventate algo XP
+
+## Important Note:
+
+During the development process, I tried to develop the video streaming and image processing through Android Studio in a plugin, however the algorithms did not work and unfortunately it was decided to make an extra plugin for the contest in addition to the project.
+
+It was decided to make an independent plugin for the ricoh theta plugin store: https://pluginstore.theta360.com/
 
 ## Our Plugin:
 
@@ -273,75 +273,90 @@ Select the plug-in that you want to use.
 
 ### Idea:
 
-Develop a plugin that could use OpenCv to process images and generate interesting filters for the camera.
 
-Filters to be used:
-
-- Image Equalization (color).
-- Binarization of image or Threshold (Red, Green and Blue).
-- Grayscale.
-- Blur.
-- Erosion-Dilatation.
-- Negative
 
 ### How it Works:
 
-Once activated the Plugin, we can select the desired filter using the "Mode" button, depending on the color that the Wi-Fi symbol has, it will be the effect that will be applied to the image.
+This plugin allows the camera to work like a sound box for all occasions. Depending on the position of the camera and the button pressed, it plays a different sound, the complement has the following sounds loaded.
 
-- Blue: Image Equalization (color).
-- Green: Image Binarization or Threshold (Red, Green and Blue).
-- Cyan: Grayscale.
-- Magenta: Blur.
-- Yellow: Erosion-Dilatation.
-- White: Negative.
-- Once the filter is selected, we only have to press the Shutter button to take the image and save it, the image will be saved in a folder called "Filtered Images".
+- More than 9000.
+- The Marcels - Blue Moon.
+- Kill Bill Ironside Siren Sound.
+- Trololo.
+- Ding.
+- Hello darkness my old friend.
 
-Note: when the filter is being applied the WiFi symbol will flash, until it stops blinking, do not press any other button, this process takes 1 - 4 seconds depending on the filter.
+But since we do not want to eliminate the functionality of the camera, if you press the shutter button for a long time, it will take a normal picture.
 
 ### Developing:
 
-The filters were made with the following code lines:
+Checking the position:
 
-- Image Equalization (color):
+      if(current_azimuth>0 && current_pitch<0 && current_roll<0)
+      {
+          position=0;
+      }
+      else if(current_azimuth<0 && current_pitch<0 && current_roll>0)
+      {
+          position=1;
+      }
+      else if(current_azimuth<0 && current_pitch>0 && current_roll>0)
+      {
+          position=2;
+      }
+      else if(current_azimuth>0 && current_pitch>0 && current_roll<0)
+      {
+          position=3;
+      }
+      else if(current_azimuth<0 && current_pitch>0 && current_roll<0)
+      {
+          position=4;
+      }
+      else if(current_azimuth<0 && current_pitch<0 && current_roll<0)
+      {
+          position=5;
+      }
 
-      fileUrl = String.format("%s/%s_equalize.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
-      Mat rgbImage = new Mat(img.size(), img.type());
-      Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2YCrCb);
-      List<Mat> channels = new ArrayList<Mat>();
-      Core.split(img, channels);
-      Imgproc.equalizeHist(channels.get(0), channels.get(0));
-      Core.merge(channels, img);
-      Imgproc.cvtColor(img, img, Imgproc.COLOR_YCrCb2BGR);
+Depending on the position in which this camera will mark the variable "position" a different number, in the next part of the code we can see that according to the button that is pressed and the position, it will reproduce a different sound, all sounds are stored in the raw folder of our app.
 
-- Binarization of image or Threshold (Red, Green and Blue):
+      if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+         if (position==0 || position==1) {
+             startPlayer(hd);
+         }
+         else if (position==2 || position==3) {
+             startPlayer(trolo);
+         }
+         else if (position==4 || position==5) {
+             startPlayer(ding);
 
-      fileUrl = String.format("%s/%s_threshold.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
-      Mat rgbImage = new Mat(img.size(), img.type());
-      Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2YCrCb);
-      Imgproc.threshold(img, img, 127.0, 255.0, Imgproc.THRESH_BINARY);
-      Imgproc.cvtColor(img, img, Imgproc.COLOR_YCrCb2RGB);
+         }
+      }
+      if (keyCode == KeyReceiver.KEYCODE_MEDIA_RECORD) {
+         if (position==0 || position==1) {
+             startPlayer(lol);
+         }
+         else if (position==2 || position==3) {
+             startPlayer(o9000);
 
-- Grayscale:
+         }
+         else if (position==4 || position==5) {
+             startPlayer(kill);
+         }
 
-      fileUrl = String.format("%s/%s_gray.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
-      Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2GRAY);
+      }
+      if (keyCode == KeyReceiver.KEYCODE_WLAN_ON_OFF) {
+         if (position==0 || position==1) {
+             startPlayer(td);
+         }
+         else if (position==2 || position==3) {
+             startPlayer(bm);
 
-- Blur:
+         }
+         else if (position==4 || position==5) {
+             startPlayer(sus);
 
-      fileUrl = String.format("%s/%s_blur.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
-      Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2BGR);
-      Imgproc.blur(img, img, new Size(25,25));
-
-- Erosion-Dilatation.
-
-      fileUrl = String.format("%s/%s_erodedilate.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
-      Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2GRAY);
-      Imgproc.threshold(img, img, 0, 255, Imgproc.THRESH_BINARY_INV+Imgproc.THRESH_OTSU);
-
-- Negative:
-
-      fileUrl = String.format("%s/%s_negative.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
-      Core.bitwise_not(img,img);
+         }
+      }
 
 ### Video:
 
