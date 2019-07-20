@@ -44,7 +44,7 @@ Current Solutions:
 
 - Minemaster bring an auxiliary digger that bring the operator physical view and wide range to manually operate the dig arm.
 
-These suppliers are recognized in the market but much of them use manual technology and require people in the place to perform their activities. 
+These suppliers are recognized in the market but much of them use manual technology and require people in the place to perform their activities.
 
 ## Materials:
 
@@ -62,7 +62,7 @@ https://www.amazon.com/Elegoo-Module-Optocoupler-Arduino-Raspberry/dp/B07F623PHG
 Software:
 - Android Studio.
 - Anrduino IDE.
-- Theta Software: 
+- Theta Software:
 https://support.theta360.com/en/download/
 - Ricoh Theta native API.
 - Cloud MQTT.
@@ -187,38 +187,38 @@ Download the files in the "Arduino Files" folder and we will have to configure t
       bool sw = false;
 
 For each ESP32, change the name with which it will connect to CloudMQTT.
- 
+
 First ESP32:
- 
+
       if (client.connect("ESP32Client1", mqttUser, mqttPassword )) {
 
       Serial.println("connected");  
 
       }
-      
+
 Second ESP32:
- 
+
       if (client.connect("ESP32Client2", mqttUser, mqttPassword )) {
 
       Serial.println("connected");  
 
       }
-      
+
 After that, the modules should work without problems.
 
 ## The Final Product:
 
 Robot Arm Driver, Final Assembly:
-<img src="https://i.ibb.co/M7YVDTf/20190718-234535.jpg" width="600">
+<img src="https://i.ibb.co/M7YVDTf/20190718-234535.jpg" width="800">
 
 Robot Arm Driver, Internal:
-<img src="https://i.ibb.co/pZhMdVD/20190718-234800.jpg" width="600">
+<img src="https://i.ibb.co/pZhMdVD/20190718-234800.jpg" width="800">
 
 Robot Arm Control, Final Assembly:
-<img src="https://i.ibb.co/PYdg5yH/20190718-234910.jpg" width="600">
+<img src="https://i.ibb.co/PYdg5yH/20190718-234910.jpg" width="800">
 
 Robot Arm Control, Internal:
-<img src="https://i.ibb.co/cF953g0/20190718-234308.jpg" width="600">
+<img src="https://i.ibb.co/cF953g0/20190718-234308.jpg" width="800">
 
 ## Important Note:
 
@@ -312,7 +312,7 @@ The filters were made with the following code lines:
       Imgproc.equalizeHist(channels.get(0), channels.get(0));
       Core.merge(channels, img);
       Imgproc.cvtColor(img, img, Imgproc.COLOR_YCrCb2BGR);
-      
+
 - Binarization of image or Threshold (Red, Green and Blue):
 
       fileUrl = String.format("%s/%s_threshold.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
@@ -320,26 +320,26 @@ The filters were made with the following code lines:
       Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2YCrCb);
       Imgproc.threshold(img, img, 127.0, 255.0, Imgproc.THRESH_BINARY);
       Imgproc.cvtColor(img, img, Imgproc.COLOR_YCrCb2RGB);
-      
+
 - Grayscale:
 
       fileUrl = String.format("%s/%s_gray.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
       Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2GRAY);
-      
+
 - Blur:
 
       fileUrl = String.format("%s/%s_blur.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
       Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2BGR);
       Imgproc.blur(img, img, new Size(25,25));
-      
+
 - Erosion-Dilatation.
 
       fileUrl = String.format("%s/%s_erodedilate.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
       Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2GRAY);
       Imgproc.threshold(img, img, 0, 255, Imgproc.THRESH_BINARY_INV+Imgproc.THRESH_OTSU);
-      
+
 - Negative:
-      
+
       fileUrl = String.format("%s/%s_negative.jpg", Constants.PLUGIN_DIRECTORY, dateTimeStr);
       Core.bitwise_not(img,img);
 
@@ -349,4 +349,3 @@ Video: Click on the image
 [![Demo](https://i.ibb.co/WWJxD4y/Sin-t-tulo-1.png)](https://youtu.be/GXGoOoDZA8g)
 
 Sorry github does not allow embed videos.
-
