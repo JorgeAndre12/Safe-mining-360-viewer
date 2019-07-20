@@ -229,7 +229,7 @@ It was decided to make an independent plugin for the ricoh theta plugin store: h
 ### Our Epic Video:
 
 Video: Click on the image
-[![Video](https://i.ibb.co/gdWNmzb/mining360.png)](https://youtu.be/dW3Mtp7snsI)
+[![Video](https://i.ibb.co/gdWNmzb/mining360.png)](https://youtu.be/JZ9efUy9qbo)
 
 Sorry github does not allow embed videos.
 
